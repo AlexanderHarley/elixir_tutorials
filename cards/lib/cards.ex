@@ -3,6 +3,9 @@ defmodule Cards do
     Methods to create and use a deck of cards
     """
 
+    @doc """
+    Returns a deck of playing cards
+    """
     def create_deck do
         values = ["Ace", "Two", "Three", "Four", "Five"]
         suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -28,6 +31,10 @@ defmodule Cards do
         Enum.member?(deck, card)
     end
 
+    @doc """
+    Deals a hand of `n` cards, where `n` is defined by `hand_size`.
+    Also returns the remainder of the deck.
+    """
     def deal(deck, hand_size) do
         Enum.split(deck, hand_size)
     end
